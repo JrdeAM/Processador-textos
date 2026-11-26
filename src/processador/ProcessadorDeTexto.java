@@ -3,7 +3,7 @@ package processador;
 /**
  * Template Method: define o esqueleto do algoritmo de processamento de texto.
  * A ordem dos passos (extrair -> converter -> juntar) fica fixa aqui;
- * as subclasses só personalizam o passo que varia.
+ * as subclasses só dizem como converter UM caractere.
  */
 public abstract class ProcessadorDeTexto {
 
@@ -25,7 +25,17 @@ public abstract class ProcessadorDeTexto {
         return texto.toCharArray();
     }
 
-    protected abstract char[] converterCaracteres(char[] caracteres);
+    /** Passo comum: percorre o vetor e delega cada caractere à subclasse. */
+    private char[] converterCaracteres(char[] caracteres) {
+        char[] convertidos = new char[caracteres.length];
+        for (int i = 0; i < caracteres.length; i++) {
+            convertidos[i] = converterCaractere(caracteres[i]);
+        }
+        return convertidos;
+    }
+
+    /** Único ponto de variação (hook abstrato). */
+    protected abstract char converterCaractere(char c);
 
     /** Passo comum: igual para qualquer processador. */
     private String juntarCaracteres(char[] caracteres) {

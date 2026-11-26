@@ -3,7 +3,8 @@ package processador;
 public class TudoMaiuscula extends ProcessadorDeTexto {
 
     @Override
-    protected char[] converterCaracteres(char[] caracteres) {
-        return null; // TODO
+    protected char converterCaractere(char c) {
+        // Character trata acentos (ç -> Ç, ã -> Ã), não só a-z.
+        return Character.toUpperCase(c);
     }
 }

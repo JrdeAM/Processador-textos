@@ -3,7 +3,7 @@ package processador;
 public class TudoMinuscula extends ProcessadorDeTexto {
 
     @Override
-    protected char[] converterCaracteres(char[] caracteres) {
-        return null; // TODO
+    protected char converterCaractere(char c) {
+        return Character.toLowerCase(c);
     }
 }
