@@ -1,26 +1,19 @@
 package processador;
 
-public class TudoMaiuscula {
+public class TudoMaiuscula extends ProcessadorDeTexto {
 
-    public static String converterTextoEmMaiusculo(String entrada) {
-        char[] caracteres = extrairCaracteres(entrada);
-        char[] caracateresAgoraMaisculos = converterCaracteresEmMaiusculo(caracteres);
-        String resultado = juntarCaractaresAgoraMaiusculo(caracateresAgoraMaisculos);
-        return resultado;
+    @Override
+    protected char[] extrairCaracteres(String texto) {
+        return null; // TODO
     }
 
-    private static char[] extrairCaracteres(String texto) {
-        // TODO Auto-generated method stub
-        return null;
+    @Override
+    protected char[] converterCaracteres(char[] caracteres) {
+        return null; // TODO
     }
 
-    private static char[] converterCaracteresEmMaiusculo(char[] chars) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    private static String juntarCaractaresAgoraMaiusculo(char[] chars) {
-        // TODO Auto-generated method stub
-        return null;
+    @Override
+    protected String juntarCaracteres(char[] caracteres) {
+        return null; // TODO
     }
 }

@@ -1,26 +1,19 @@
 package processador;
 
-public class TudoMinuscula {
+public class TudoMinuscula extends ProcessadorDeTexto {
 
-    public static String converterTextoEmMinusculo(String entrada) {
-        char[] caracteres = extrairCaracteres(entrada);
-        char[] caracateresAgoraMinusculos = converterCaracteresEmMinusculo(caracteres);
-        String resultado = juntarCaractaresAgoraMinusculo(caracateresAgoraMinusculos);
-        return resultado;
+    @Override
+    protected char[] extrairCaracteres(String texto) {
+        return null; // TODO
     }
 
-    private static String juntarCaractaresAgoraMinusculo(char[] chars) {
-        // TODO Auto-generated method stub
-        return null;
+    @Override
+    protected char[] converterCaracteres(char[] caracteres) {
+        return null; // TODO
     }
 
-    private static char[] converterCaracteresEmMinusculo(char[] chars) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    private static char[] extrairCaracteres(String texto) {
-        // TODO Auto-generated method stub
-        return null;
+    @Override
+    protected String juntarCaracteres(char[] caracteres) {
+        return null; // TODO
     }
 }
