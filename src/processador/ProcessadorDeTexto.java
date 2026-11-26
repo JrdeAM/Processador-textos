@@ -17,9 +17,18 @@ public abstract class ProcessadorDeTexto {
         return juntarCaracteres(convertidos);
     }
 
-    protected abstract char[] extrairCaracteres(String texto);
+    /** Passo comum: igual para qualquer processador. Null vira texto vazio. */
+    private char[] extrairCaracteres(String texto) {
+        if (texto == null) {
+            return new char[0];
+        }
+        return texto.toCharArray();
+    }
 
     protected abstract char[] converterCaracteres(char[] caracteres);
 
-    protected abstract String juntarCaracteres(char[] caracteres);
+    /** Passo comum: igual para qualquer processador. */
+    private String juntarCaracteres(char[] caracteres) {
+        return new String(caracteres);
+    }
 }
